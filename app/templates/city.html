@@ -1,9 +1,9 @@
-
-
 <div>
   <h1>Post Angular Example</h1>
-  <select id="citySelector" style="width: 100%;">
-    <option ng-repeat="user in weather.users" value="{{user.id}}">{{user.login}}</option>
-  </select>
+
+  <select ng-options="user.login as user.login for user in weather.users track by user.login"
+          ng-model="weather.selected"
+          id="citySelector"
+          ng-change="weather.onChanged()"/>
   <ui-view/>
 </div>

@@ -3,7 +3,7 @@
 function WeatherDetailsCtrl($stateParams) {
 
   var vm = this;
-  vm.city = $stateParams.city;  
+  vm.city = $stateParams.city;
 
 }
 WeatherDetailsCtrl.$inject = ["$stateParams"];

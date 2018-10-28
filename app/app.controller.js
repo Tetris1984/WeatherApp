@@ -1,10 +1,14 @@
 (function () {
   "use strict";
-function WeatherCtrl($stateParams, cityService) {
+  function WeatherCtrl($stateParams, cityService, $state) {
 
-  var vm = this;
-  vm.city = $stateParams.city;
+    var vm = this;
+    vm.city = $stateParams.city;
 
+    vm.onChanged = function () {
+      $state.go('main.weather.details',
+        {city: vm.selected}, {notify: false})
+    };
 
      var onFetchError = function(message){
       vm.error = "Error Fetching Users. Message:" + message;
@@ -20,8 +24,8 @@ function WeatherCtrl($stateParams, cityService) {
 
      getUsers();
 
-}
-WeatherCtrl.$inject = ["$stateParams", "cityService"];
+  }
 
-angular.module('weatherApp').controller('WeatherCtrl', WeatherCtrl);
+  WeatherCtrl.$inject = ["$stateParams", "cityService", "$state"];
+  angular.module('weatherApp').controller('WeatherCtrl', WeatherCtrl);
 })();

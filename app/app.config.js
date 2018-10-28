@@ -16,7 +16,7 @@ angular.module('weatherApp').config(function($stateProvider, $urlRouterProvider)
     .state('main.home', {
       url: '/home',
       templateUrl: 'templates/home.html'
-    })    
+    })
     .state('main.weather', {
       url: "/weather",
       templateUrl: 'templates/city.html',
@@ -25,8 +25,8 @@ angular.module('weatherApp').config(function($stateProvider, $urlRouterProvider)
     .state('main.weather.details', {
       url: "/:city",
       templateUrl: 'templates/city-details.html',
-      controller: "WeatherDetailsCtrl as details"   
+      controller: "WeatherDetailsCtrl as details"
     });
-    
+
 });
 })();
