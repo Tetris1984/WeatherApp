@@ -4,6 +4,8 @@
   <select ng-options="user.login as user.login for user in weather.users track by user.login"
           ng-model="weather.selected"
           id="citySelector"
-          ng-change="weather.onChanged()"/>
+          ng-change="weather.onChanged()">
+            <option value=""></option>
+          </select>
   <ui-view/>
 </div>
